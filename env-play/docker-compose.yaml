@@ -1,0 +1,16 @@
+version: "3"
+services:
+  my-app-1:
+    image: j0sal/env-app
+    ports:
+      - "3001:3000"
+    env_file:
+      - .env
+  my-app-2:
+    image: j0sal/env-app
+    ports:
+      - "3002:3000"
+    environment:
+      - USER_ID=${USER_ID}
+      - USER_KEY=${NODE_PORT}
+      - NODE_ENV=something
